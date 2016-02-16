@@ -1,0 +1,45 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MainLayout.master.cs" Inherits="ChatSite.MainLayout" %>
+
+<%@ Import Namespace="RnsBaseWeb.Session" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Chat Site</title>
+
+    <script type="text/javascript" src="<%= ResolveUrl("~/Scripts/jquery-1.11.2.min.js") %>"></script>
+    
+    <link rel="stylesheet" type="text/css" href="App_Themes/semantic-ui/semantic.min.css" />
+    <script type="text/javascript" src="<%= ResolveUrl("~/App_Themes/semantic-ui/semantic.min.js")%>"></script>
+
+    <link rel="stylesheet" type="text/css" href="assets/css/common.css" />
+    <script type="text/javascript" src="<%= ResolveUrl("~/assets/js/common.js")%>"></script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+
+    <div class="container">
+        <div class="ui secondary pointing menu">
+            <a href="<%=ResolveUrl("Default.aspx") %>" class="active red item"><i class="wechat icon"></i>Chat Site</a>
+            <a href="<%=ResolveUrl("Default.aspx") %>" class="item"><i class="home icon"></i>Home</a>
+            <% if( CSessionMgr.IsLogined() ) { %>
+            <a class="teal right item">Signed in as <%=CSessionMgr.GetAccountName() %></a>
+            <a href="<%=ResolveUrl("User/SignIn.aspx?action=signout") %>" class="teal item">Sign out</a>
+            <% } %>
+        </div>
+        
+        <div class="ui image">
+            <img src="<%=ResolveUrl("~/assets/images/banner.jpg")%>" />
+        </div>
+
+        <div style="margin:2em;">
+            <asp:ContentPlaceHolder ID="body" runat="server"></asp:ContentPlaceHolder>
+        </div>
+    </div>
+    
+    <input type="hidden" id="baseUrl" value="<%=Request.Url.GetLeftPart(UriPartial.Authority) %>" />
+</body>
+</html>

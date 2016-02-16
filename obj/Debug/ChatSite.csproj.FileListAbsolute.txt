@@ -1,0 +1,6 @@
+E:\C# Projects\ChatSite\bin\ChatSite.dll.config
+E:\C# Projects\ChatSite\bin\ChatSite.dll
+E:\C# Projects\ChatSite\bin\ChatSite.pdb
+E:\C# Projects\ChatSite\obj\Debug\ChatSite.csprojResolveAssemblyReference.cache
+E:\C# Projects\ChatSite\obj\Debug\ChatSite.dll
+E:\C# Projects\ChatSite\obj\Debug\ChatSite.pdb
